@@ -7,7 +7,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 # Create the Flask app
 app = Flask(__name__)
-app.secret_key = os.environ.get("SESSION_SECRET", "your-secret-key-here")
+app.secret_key = os.environ.get("SESSION_SECRET", "8dbb5477462936f9c7c3a2743428bb84d71e0e695ef4400bfa66a13fa4c8b5ac")
 
 # Sample product data for the catalog
 PRODUCTS = [
