@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+
+{% block title %}Customer Registration - E-Commerce Hub{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Company Branding Header -->
+            <div class="text-center mb-5">
+                <div class="mb-4">
+                    <i class="fas fa-shopping-cart fa-4x text-primary"></i>
+                </div>
+                <h1 class="display-5 fw-bold">E-Commerce Hub</h1>
+                <p class="lead text-muted">Your Gateway to Premium Online Shopping</p>
+                <hr class="my-4">
+            </div>
+
+            <!-- Registration Form -->
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white text-center py-4">
+                    <h3 class="mb-0">
+                        <i class="fas fa-user-plus me-2"></i>Customer Registration
+                    </h3>
+                    <p class="mb-0 mt-2">Join our community of satisfied customers</p>
+                </div>
+                <div class="card-body p-5">
+                    <form method="POST" id="registrationForm" novalidate>
+                        <!-- Personal Information -->
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <h5 class="border-bottom pb-2 mb-3">
+                                    <i class="fas fa-user me-2"></i>Personal Information
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="first_name" class="form-label">
+                                    <i class="fas fa-user me-1"></i>First Name *
+                                </label>
+                                <input type="text" class="form-control" id="first_name" name="first_name" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid first name.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="last_name" class="form-label">
+                                    <i class="fas fa-user me-1"></i>Last Name *
+                                </label>
+                                <input type="text" class="form-control" id="last_name" name="last_name" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid last name.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <h5 class="border-bottom pb-2 mb-3">
+                                    <i class="fas fa-address-book me-2"></i>Contact Information
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">
+                                    <i class="fas fa-envelope me-1"></i>Email Address *
+                                </label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid email address.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">
+                                    <i class="fas fa-phone me-1"></i>Phone Number *
+                                </label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid phone number.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Address Information -->
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <h5 class="border-bottom pb-2 mb-3">
+                                    <i class="fas fa-map-marker-alt me-2"></i>Address Information
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="address" class="form-label">
+                                <i class="fas fa-home me-1"></i>Street Address
+                            </label>
+                            <input type="text" class="form-control" id="address" name="address">
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="city" class="form-label">
+                                    <i class="fas fa-city me-1"></i>City
+                                </label>
+                                <input type="text" class="form-control" id="city" name="city">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="state" class="form-label">
+                                    <i class="fas fa-flag me-1"></i>State
+                                </label>
+                                <input type="text" class="form-control" id="state" name="state">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="zip_code" class="form-label">
+                                    <i class="fas fa-mail-bulk me-1"></i>ZIP Code
+                                </label>
+                                <input type="text" class="form-control" id="zip_code" name="zip_code">
+                            </div>
+                        </div>
+
+                        <!-- Account Security -->
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <h5 class="border-bottom pb-2 mb-3">
+                                    <i class="fas fa-lock me-2"></i>Account Security
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="password" class="form-label">
+                                    <i class="fas fa-key me-1"></i>Password *
+                                </label>
+                                <input type="password" class="form-control" id="password" name="password" required minlength="8">
+                                <div class="form-text">Password must be at least 8 characters long.</div>
+                                <div class="invalid-feedback">
+                                    Password must be at least 8 characters long.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="confirm_password" class="form-label">
+                                    <i class="fas fa-key me-1"></i>Confirm Password *
+                                </label>
+                                <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+                                <div class="invalid-feedback">
+                                    Passwords must match.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="mb-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    I agree to the <a href="#" class="text-primary">Terms of Service</a> and <a href="#" class="text-primary">Privacy Policy</a> *
+                                </label>
+                                <div class="invalid-feedback">
+                                    You must agree to the terms and conditions.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-user-plus me-2"></i>Create Account
+                            </button>
+                        </div>
+
+                        <!-- Additional Options -->
+                        <div class="text-center mt-4">
+                            <p class="text-muted">
+                                Already have an account? 
+                                <a href="#" class="text-primary text-decoration-none">Sign in here</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Company Info Footer -->
+            <div class="text-center mt-4">
+                <div class="row">
+                    <div class="col-md-4">
+                        <i class="fas fa-shield-alt fa-2x text-success mb-2"></i>
+                        <h6>Secure Registration</h6>
+                        <p class="text-muted small">Your data is protected with industry-standard encryption</p>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="fas fa-shipping-fast fa-2x text-primary mb-2"></i>
+                        <h6>Fast Delivery</h6>
+                        <p class="text-muted small">Quick and reliable shipping to your doorstep</p>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="fas fa-headset fa-2x text-info mb-2"></i>
+                        <h6>24/7 Support</h6>
+                        <p class="text-muted small">Round-the-clock customer service assistance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
